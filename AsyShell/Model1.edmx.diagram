@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="fff49c90d6354a0db6c888ed8cee8a04" Name="Diagram1">
+        <EntityTypeShape EntityType="ASYSell_AhtymovModel.Chek" Width="1.5" PointX="3.5" PointY="1" IsExpanded="true" />
+        <EntityTypeShape EntityType="ASYSell_AhtymovModel.Customer" Width="1.5" PointX="0.75" PointY="1.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="ASYSell_AhtymovModel.Product" Width="1.5" PointX="3" PointY="5.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="ASYSell_AhtymovModel.Sell" Width="1.5" PointX="6" PointY="1" IsExpanded="true" />
+        <EntityTypeShape EntityType="ASYSell_AhtymovModel.Seller" Width="1.5" PointX="0.75" PointY="5.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="ASYSell_AhtymovModel.sysdiagrams" Width="1.5" PointX="5.75" PointY="4.75" IsExpanded="true" />
+        <AssociationConnector Association="ASYSell_AhtymovModel.FK_Chek_Customer" ManuallyRouted="false" />
+        <AssociationConnector Association="ASYSell_AhtymovModel.FK_Chek_Seller" ManuallyRouted="false" />
+        <AssociationConnector Association="ASYSell_AhtymovModel.FK_Sell_Chek" ManuallyRouted="false" />
+        <AssociationConnector Association="ASYSell_AhtymovModel.FK_Sell_Product" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
