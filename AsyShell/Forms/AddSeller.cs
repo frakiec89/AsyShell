@@ -22,6 +22,7 @@ namespace AsyShell.Forms
 
         private void btAdd_Click(object sender, EventArgs e)
         {
+            //  для гита 
             try
             {
                  MessageBox.Show( SellerMamager.SetSeller(tbName.Text) , "Сообщение" , MessageBoxButtons.OK ,MessageBoxIcon.Information );
