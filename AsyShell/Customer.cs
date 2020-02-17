@@ -17,13 +17,13 @@ namespace AsyShell
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public Customer()
         {
-            this.Chek = new HashSet<Chek>();
+            this.Chek1 = new HashSet<Chek>();
         }
     
         public int IdCustomer { get; set; }
         public string Name { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Chek> Chek { get; set; }
+        public virtual ICollection<Chek> Chek1 { get; set; }
     }
 }

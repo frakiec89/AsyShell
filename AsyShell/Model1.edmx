@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="Хранилище ASYSell_AhtymovModel" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+    <Schema Namespace="Хранилище ASYSell_AhtymovModel" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="Chek">
           <Key>
             <PropertyRef Name="IdCheck" />
@@ -18,7 +18,7 @@
           <Key>
             <PropertyRef Name="IdCustomer" />
           </Key>
-          <Property Name="IdCustomer" Type="int" Nullable="false" />
+          <Property Name="IdCustomer" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="Name" Type="nvarchar" MaxLength="50" Nullable="false" />
         </EntityType>
         <EntityType Name="Product">
@@ -41,7 +41,7 @@
           <Key>
             <PropertyRef Name="IdSeller" />
           </Key>
-          <Property Name="IdSeller" Type="int" Nullable="false" />
+          <Property Name="IdSeller" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="Name" Type="nvarchar" MaxLength="50" Nullable="false" />
         </EntityType>
         <EntityType Name="sysdiagrams">
@@ -157,8 +157,7 @@
             <End Role="Sell" EntitySet="Sell" />
           </AssociationSet>
         </EntityContainer>
-      </Schema>
-    </edmx:StorageModels>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="ASYSell_AhtymovModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
@@ -170,17 +169,17 @@
           <Property Name="IdSeller" Type="Int32" Nullable="false" />
           <Property Name="IdCustomer" Type="Int32" Nullable="false" />
           <Property Name="Data" Type="DateTime" Precision="3" />
-          <NavigationProperty Name="Customer" Relationship="Self.FK_Chek_Customer" FromRole="Chek" ToRole="Customer" />
           <NavigationProperty Name="Seller" Relationship="Self.FK_Chek_Seller" FromRole="Chek" ToRole="Seller" />
           <NavigationProperty Name="Sell" Relationship="Self.FK_Sell_Chek" FromRole="Chek" ToRole="Sell" />
+          <NavigationProperty Name="Customer1" Relationship="ASYSell_AhtymovModel.FK_Chek_Customer1" FromRole="Chek" ToRole="Customer" />
         </EntityType>
         <EntityType Name="Customer">
           <Key>
             <PropertyRef Name="IdCustomer" />
           </Key>
-          <Property Name="IdCustomer" Type="Int32" Nullable="false" />
+          <Property Name="IdCustomer" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
-          <NavigationProperty Name="Chek" Relationship="Self.FK_Chek_Customer" FromRole="Customer" ToRole="Chek" />
+          <NavigationProperty Name="Chek1" Relationship="ASYSell_AhtymovModel.FK_Chek_Customer1" FromRole="Customer" ToRole="Chek" />
         </EntityType>
         <EntityType Name="Product">
           <Key>
@@ -219,18 +218,6 @@
           <Property Name="version" Type="Int32" />
           <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
         </EntityType>
-        <Association Name="FK_Chek_Customer">
-          <End Role="Customer" Type="Self.Customer" Multiplicity="1" />
-          <End Role="Chek" Type="Self.Chek" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Customer">
-              <PropertyRef Name="IdCustomer" />
-            </Principal>
-            <Dependent Role="Chek">
-              <PropertyRef Name="IdCustomer" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
         <Association Name="FK_Chek_Seller">
           <End Role="Seller" Type="Self.Seller" Multiplicity="1" />
           <End Role="Chek" Type="Self.Chek" Multiplicity="*" />
@@ -274,10 +261,6 @@
           <EntitySet Name="Sell" EntityType="Self.Sell" />
           <EntitySet Name="Seller" EntityType="Self.Seller" />
           <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" />
-          <AssociationSet Name="FK_Chek_Customer" Association="Self.FK_Chek_Customer">
-            <End Role="Customer" EntitySet="Customer" />
-            <End Role="Chek" EntitySet="Chek" />
-          </AssociationSet>
           <AssociationSet Name="FK_Chek_Seller" Association="Self.FK_Chek_Seller">
             <End Role="Seller" EntitySet="Seller" />
             <End Role="Chek" EntitySet="Chek" />
@@ -320,6 +303,10 @@
             <Parameter Name="new_diagramname" Mode="In" Type="String" />
           </FunctionImport>
           <FunctionImport Name="sp_upgraddiagrams" />
+          <AssociationSet Name="FK_Chek_Customer1" Association="ASYSell_AhtymovModel.FK_Chek_Customer1">
+            <End Role="Customer" EntitySet="Customer" />
+            <End Role="Chek" EntitySet="Chek" />
+          </AssociationSet>
         </EntityContainer>
         <ComplexType Name="sp_helpdiagramdefinition_Result">
           <Property Type="Int32" Name="version" Nullable="true" />
@@ -332,6 +319,18 @@
           <Property Type="String" Name="Owner" Nullable="true" MaxLength="128" />
           <Property Type="Int32" Name="OwnerID" Nullable="false" />
         </ComplexType>
+        <Association Name="FK_Chek_Customer1">
+          <End Type="ASYSell_AhtymovModel.Customer" Role="Customer" Multiplicity="1" />
+          <End Type="ASYSell_AhtymovModel.Chek" Role="Chek" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Customer">
+              <PropertyRef Name="IdCustomer" />
+            </Principal>
+            <Dependent Role="Chek">
+              <PropertyRef Name="IdCustomer" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
