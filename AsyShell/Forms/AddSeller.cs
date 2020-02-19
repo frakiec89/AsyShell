@@ -33,5 +33,15 @@ namespace AsyShell.Forms
             }
 
         }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void tbName_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

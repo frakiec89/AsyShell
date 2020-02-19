@@ -28,72 +28,86 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.button1 = new System.Windows.Forms.Button();
-            this.textBox1 = new System.Windows.Forms.TextBox();
             this.btAddCustomer = new System.Windows.Forms.Button();
             this.btAddSeller = new System.Windows.Forms.Button();
+            this.btAddProduct = new System.Windows.Forms.Button();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.btSeller = new System.Windows.Forms.Button();
+            this.groupBox1.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(114, 198);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 0;
-            this.button1.Text = "button1";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
-            // textBox1
-            // 
-            this.textBox1.Location = new System.Drawing.Point(38, 37);
-            this.textBox1.Multiline = true;
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(215, 118);
-            this.textBox1.TabIndex = 1;
             // 
             // btAddCustomer
             // 
-            this.btAddCustomer.Location = new System.Drawing.Point(486, 87);
+            this.btAddCustomer.Location = new System.Drawing.Point(6, 37);
             this.btAddCustomer.Name = "btAddCustomer";
             this.btAddCustomer.Size = new System.Drawing.Size(165, 23);
             this.btAddCustomer.TabIndex = 2;
-            this.btAddCustomer.Text = "Добавить  Покупателя ";
+            this.btAddCustomer.Text = "Покупателя ";
             this.btAddCustomer.UseVisualStyleBackColor = true;
             this.btAddCustomer.Click += new System.EventHandler(this.btAddCustomer_Click);
             // 
             // btAddSeller
             // 
-            this.btAddSeller.Location = new System.Drawing.Point(486, 132);
+            this.btAddSeller.Location = new System.Drawing.Point(6, 66);
             this.btAddSeller.Name = "btAddSeller";
             this.btAddSeller.Size = new System.Drawing.Size(165, 23);
             this.btAddSeller.TabIndex = 3;
-            this.btAddSeller.Text = "Добавить  Продавца";
+            this.btAddSeller.Text = "Продавца";
             this.btAddSeller.UseVisualStyleBackColor = true;
             this.btAddSeller.Click += new System.EventHandler(this.btAddSeller_Click);
+            // 
+            // btAddProduct
+            // 
+            this.btAddProduct.Location = new System.Drawing.Point(6, 95);
+            this.btAddProduct.Name = "btAddProduct";
+            this.btAddProduct.Size = new System.Drawing.Size(165, 23);
+            this.btAddProduct.TabIndex = 4;
+            this.btAddProduct.Text = "Продукты";
+            this.btAddProduct.UseVisualStyleBackColor = true;
+            this.btAddProduct.Click += new System.EventHandler(this.btAddProduct_Click);
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.btAddCustomer);
+            this.groupBox1.Controls.Add(this.btAddProduct);
+            this.groupBox1.Controls.Add(this.btAddSeller);
+            this.groupBox1.Location = new System.Drawing.Point(12, 44);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(190, 155);
+            this.groupBox1.TabIndex = 5;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Добавить";
+            // 
+            // btSeller
+            // 
+            this.btSeller.Location = new System.Drawing.Point(553, 110);
+            this.btSeller.Name = "btSeller";
+            this.btSeller.Size = new System.Drawing.Size(145, 23);
+            this.btSeller.TabIndex = 6;
+            this.btSeller.Text = "Продавцы";
+            this.btSeller.UseVisualStyleBackColor = true;
+            this.btSeller.Click += new System.EventHandler(this.btSeller_Click);
             // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.btAddSeller);
-            this.Controls.Add(this.btAddCustomer);
-            this.Controls.Add(this.textBox1);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.btSeller);
+            this.Controls.Add(this.groupBox1);
             this.Name = "MainForm";
-            this.Text = "Form1";
+            this.Text = "Главная Форма";
+            this.groupBox1.ResumeLayout(false);
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
         #endregion
-
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Button btAddCustomer;
         private System.Windows.Forms.Button btAddSeller;
+        private System.Windows.Forms.Button btAddProduct;
+        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.Button btSeller;
     }
 }
 

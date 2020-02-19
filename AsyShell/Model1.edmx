@@ -9,7 +9,7 @@
           <Key>
             <PropertyRef Name="IdCheck" />
           </Key>
-          <Property Name="IdCheck" Type="int" Nullable="false" />
+          <Property Name="IdCheck" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="IdSeller" Type="int" Nullable="false" />
           <Property Name="IdCustomer" Type="int" Nullable="false" />
           <Property Name="Data" Type="datetime" />
@@ -25,7 +25,7 @@
           <Key>
             <PropertyRef Name="IdProduct" />
           </Key>
-          <Property Name="IdProduct" Type="int" Nullable="false" />
+          <Property Name="IdProduct" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="Name" Type="nvarchar" MaxLength="50" Nullable="false" />
           <Property Name="Price" Type="float" />
         </EntityType>
@@ -33,7 +33,7 @@
           <Key>
             <PropertyRef Name="IdSell" />
           </Key>
-          <Property Name="IdSell" Type="int" Nullable="false" />
+          <Property Name="IdSell" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="IdProduct" Type="int" Nullable="false" />
           <Property Name="IdCheck" Type="int" Nullable="false" />
         </EntityType>

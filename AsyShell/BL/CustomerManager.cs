@@ -20,6 +20,8 @@ namespace AsyShell.BL
             {
                 try
                 {
+                    
+
                     return entities.Customer.ToList();
                 }
                 catch (Exception ex)

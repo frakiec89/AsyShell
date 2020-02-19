@@ -50,5 +50,25 @@ namespace AsyShell.BL
             }
         }
 
+
+        public List<string> GetSelerCB ()
+        {
+            List<string> seller = new List<string>();
+            seller.Add("Все");
+            try
+            {
+                var vs = entities.Seller.Select(x => x.Name);
+                List<string> vs1 = vs.ToList();
+                vs1.Sort();
+                seller.AddRange(vs1);
+            }
+            catch
+            {
+                throw new Exception("Error db");
+            }
+            return seller;
+        }
+ 
+
     }
 }
